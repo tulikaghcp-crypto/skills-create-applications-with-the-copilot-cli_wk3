@@ -6,6 +6,9 @@
  * - Subtraction (-)
  * - Multiplication (×)
  * - Division (÷)
+ * - Modulo (%)
+ * - Exponentiation (^)
+ * - Square Root (√)
  */
 
 /**
@@ -52,9 +55,49 @@ function divide(a, b) {
   return a / b;
 }
 
+/**
+ * Calculate the remainder of division
+ * @param {number} a - Dividend
+ * @param {number} b - Divisor
+ * @returns {number} Remainder of a divided by b
+ * @throws {Error} If divisor is zero
+ */
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error('Modulo by zero is not allowed');
+  }
+  return a % b;
+}
+
+/**
+ * Raise a number to a power
+ * @param {number} base - The base number
+ * @param {number} exponent - The exponent
+ * @returns {number} Base raised to the exponent
+ */
+function power(base, exponent) {
+  return Math.pow(base, exponent);
+}
+
+/**
+ * Calculate the square root of a number
+ * @param {number} n - The number
+ * @returns {number} Square root of n
+ * @throws {Error} If n is negative
+ */
+function squareRoot(n) {
+  if (n < 0) {
+    throw new Error('Cannot calculate square root of a negative number');
+  }
+  return Math.sqrt(n);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
-  divide
+  divide,
+  modulo,
+  power,
+  squareRoot
 };
